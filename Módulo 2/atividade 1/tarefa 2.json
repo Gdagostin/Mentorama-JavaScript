@@ -1,0 +1,26 @@
+{
+    "companyname": "Concessionaria X",
+    "local": "Centro",
+    "ano": 2000,
+    "carros": [
+     {
+        "nome": "Mustang",
+        "cor": "Preto",
+        "ano": 1995
+    },
+    {
+        "nome": "Camaro",
+        "cor": "Branco",
+        "ano": 1967
+    },
+    {
+        "nome": "Jaguar",
+        "cor": "Azul",
+        "ano": 2005
+    }
+    ]
+}
+
+
+
+
