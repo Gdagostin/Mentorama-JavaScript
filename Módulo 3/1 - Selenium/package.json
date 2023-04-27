@@ -1,0 +1,15 @@
+{
+  "name": "modulo_-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exemplo_pratico.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^111.0.0",
+    "selenium-webdriver": "^4.8.2"
+  }
+}
