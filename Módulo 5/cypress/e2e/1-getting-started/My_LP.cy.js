@@ -1,23 +1,25 @@
 /// <reference types="cypress"/>
 
-describe('CN0003 - Botão Entrar com dados válidos', () => {
+const pageUrl = 'https://shop.lm.mentorama.com.br/';
+
+describe('Autenticação de Usuário', () => {
     beforeEach(() => {
-        cy.visit('https://shop.lm.mentorama.com.br/?page_id=18')
+        cy.visit(pageUrl)
     })
 
-    it('Preencho usuario e senha e clico em acessar', () => {
-        cy.get('input[name="username"]').type('gustavodagostin752@hotmail.com', {force: true});
-        cy.get('input[name="password"]').type('teste');
-        cy.get('button[name="login"]').click();
-    })
-})
+    it('CN0003 - Login com Credenciais Válidas', () => {
+        cy.get('.icon-text').click();
+        cy.get('#username').type('gustavodagostin752@hotmail.com', {force: true});
+        cy.get('#password').type('teste');
+        cy.get('.woocommerce-button').click();
 
-describe('CN0004 - Botão Entrar sem dados', () => {
-    beforeEach(() => {
-        cy.visit('https://shop.lm.mentorama.com.br/?page_id=18')
+        cy.url().should('include', '/minha-conta');
     })
 
-    it('Preencho usuario e senha e clico em acessar', () => {
-        cy.get('button[name="login"]').click();
+    it('CN0004 - Tentativa de Login sem Fornecer Dados', () => {
+        cy.get('.icon-text').click();
+        cy.get('.woocommerce-button').click();
+
+        cy.get('.woocommerce-error').should('be.visible');
     })
 })
